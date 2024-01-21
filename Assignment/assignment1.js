@@ -1,3 +1,14 @@
+/*********************************************************************************
+*  WEB700 – Assignment 1
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: Ma Czarina Alexandria Navarrete Student ID: mcanavarrete/126846237 Date: 2024-01-20
+*
+********************************************************************************/ 
+
+
 // Creating 3 variables that each store an array of strings
 const serverVerbs = ["GET", "GET", "GET", "POST", "GET", "POST"];
 const serverPaths = ["/", "/about", "/contact", "/login", "/panel", "/logout"];
