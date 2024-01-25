@@ -1,258 +1,76 @@
+// Enforces strict mode for more secure JavaScript by catching common coding mistakes and "unsafe" actions.
 "use strict"
 console.log("Week 02")
 
-//Handling NaN or undefined
+// Function that demonstrates handling of optional parameters with default values to avoid NaN or undefined results.
 function add(a, b, c){
-    return a + (b || 0) + (c || 0)
+    return a + (b || 0) + (c || 0) // If b or c is not provided, they default to 0.
 }
 
-var c = add(2, 4, 4)
-console.log(`Sum : ${c}`)
-
-c = add(2, 4)
-console.log(`Sum : ${c}`)
-
-
-//Function expression
+// Function expressions define functions in a variable, useful for anonymous functions or closures.
 var mul = function(a, b){
-    return a * b
+    return a * b // Returns the product of a and b.
 }
 
-c = mul(2, 4)
-console.log(`Mul : ${c}`)
-
-//arguments global built-in object
+// Demonstrates the use of the 'arguments' object which contains all arguments passed to the function.
 function print1(){
-    console.log(arguments)
+    console.log(arguments) // Logs the 'arguments' object, which is array-like but not an actual array.
     for(var i = 0; i < arguments.length; i++){
-        console.log(arguments[i])
+        console.log(arguments[i]) // Logs each argument individually.
     }
-} 
+}
 
-print1(1, 2, 3, 4, 5)
-
+// The rest parameter '...values' captures all passed arguments into an actual array, allowing for more flexible function definitions.
 function print2(...values){
-    console.log(values)
-    //console.log(arguments)
+    console.log(values) // Logs the array of values passed to the function.
     for(var i = 0; i < values.length; i++){
-        console.log(values[i])
+        console.log(values[i]) // Logs each value in the array.
     }
 }
 
-print2(10, 20, 30, 40, 50)
+// Demonstrates array operations such as push, pop, shift, and unshift for adding and removing elements.
+var a = new Array() // Declares an empty array.
+a.push(100) // Adds elements to the end of the array.
+a.pop() // Removes the last element from the array and returns it.
+a.shift() // Removes the first element from the array and returns it.
+a.unshift() // Adds one or more elements to the beginning of the array.
 
-function print3(values){
-    console.log(values)
-    console.log(arguments)
-    for(var i = 0; i < values.length; i++){
-        console.log(values[i])
-    }
-}
-
-print3([100, 200, 300, 400, 500], 20, 30, "hello")
-
-// Wedensday Code cont.....
-//var a = [100, 200]
-var a = new Array()
-a.push(100)
-a.push(200)
-a.push(300)
-
-a[3] = 400
-
-console.log(a)
-console.log(a[0])
-console.log(a[3])
-console.log(a[4])
-
-//a[0] = undefined
-//console.log(a)
-let r = a.pop()
-console.log(a, r)
-a.shift()
-console.log(a)
-a.unshift()
-console.log(a)
-console.log(a.length) //Property and not method
-
-console.table(a)
-console.dir(".")
-console.warn("TEST warning")
-console.error("TEST error")
-
-//Global functions
-//Sting to number
-let x = parseInt("101")
-//let x = parseFloat("101.0")
-//let x = parseInt("a101")
+// Global functions like parseInt and isNaN are used for converting strings to numbers and checking for NaN values, respectively.
+let x = parseInt("101") // Converts the string "101" to the number 101.
 if(isNaN(x)){
-    console.log("x is not a number")
-}else{
-    console.log(x, typeof(x))
+    console.log("x is not a number") // Checks if x is NaN (Not a Number).
 }
 
-//let y = 10 / 0
-let y = 10 / 2
-if(isFinite(y)){
-    console.log("x is a finite number")
-}else{
-    console.log("x is NOT a finite number")
-}
+// The Math object provides basic mathematical functions and constants.
+x = Math.pow(10,2) // Calculates 10 to the power of 2.
+x = Math.min(...a) // Finds the minimum value in array 'a' using the spread syntax.
 
-//Math Object
+// Demonstrates the use of the Date object to work with dates and times.
+let today = new Date(); // Creates a new Date object representing the current date and time.
 
-console.log("Math")
-x = Math.pow(10,2)
-console.log(x)
+// JSON handling with JSON.stringify to convert JavaScript objects to JSON strings, and JSON.parse to convert JSON strings back to JavaScript objects.
+let person = { id: 1, first_name: "Pritesh", last_name: "Patel" } // JavaScript object.
+let json_person = JSON.stringify(person) // Converts 'person' to a JSON string.
+let new_person = JSON.parse(json_person) // Converts 'json_person' back to a JavaScript object.
 
-x = Math.min(10, 20, 30, 40)
-console.log(x)
-x = Math.min(...a) //Array to individual values OR destructure array
-console.log(x)
-console.log(...a)
-
-//Date
-console.log("DATE")
-let today = new Date();
-console.log(Date())
-console.log(today)
-console.log(Date.now()) //long number date
-console.log(today.getTime())
-console.log(today.getDay())
-
-//https://jsonplaceholder.typicode.com/
-//JSON Handling
-console.log("JSON Handling")
-let person = {
-    id: 1,
-    first_name: "Pritesh",
-    //first_name: "Patel",
-    last_name: "Patel",
-    address: {
-        "city name": "Tor\"onto",
-        country: "CA"
-    },
-    birth_date:{
-        day: today.getDay(),
-        month: today.getMonth(),
-        year: today.getFullYear()
-    }
-}
-
-console.log(person)
-console.log(person.first_name)
-console.log(person.address.city)
-
-//Convert to JSON string OR JSON object
-let json_person = JSON.stringify(person)
-//json_person = json_person.replace("{", "[")
-console.log(json_person)
-console.log(json_person.id) //Not possilbe
-console.log(json_person.first_name) //Not possilbe
-
-//Convert JSON string OR JSON object to JavaScript Object
-let new_person = JSON.parse(json_person)
-console.log(new_person)
-console.log(new_person.id) 
-console.log(new_person.first_name)
-
-//Closure
-console.log("----- Closure -----")
-let success = () => {
-    console.log("SUCCESS")
-}
-
-let failure = function(){
-    console.log("FAILURE")
-}
-
+// Closure examples showing how functions can encapsulate and maintain their own scope of variables.
 function networkCall(n, s, f){
-    console.log(`Network called ${n}`)
     if(n >= 10){
-        s()
+        s() // Calls the success callback.
     }else{
-        f()
+        f() // Calls the failure callback.
     }
 }
 
-networkCall(3, success, failure)
+// Arrow functions provide a concise syntax for writing function expressions.
+let sayHello = name => `Hello ${name}` // Arrow function returning a greeting string.
 
-//Another want anonymous function
-networkCall(10, function(){
-    console.log("I got SUCCEES")
-}, function(){
-    console.log("I got ERROR")
-})
-
-networkCall(10, () => {
-    console.log("I got SUCCEES")
-}, () => {
-    console.log("I got ERROR")
-})
-
-
-//Arrow Function
-function sayHello(){
-    console.log("Hello World")
-}
-
-//Arroe
-sayHello = () => {
-    console.log("Hello World")
-}
-
-//More versions
-function sayHello(name){
-    console.log(`Hello ${name}`)
-}
-
-sayHello = (name) => {
-    return `Hello ${name}`
-}
-
-sayHello = name => {
-    return `Hello ${name}`
-}
-
-sayHello = name => {
-        `Hello ${name}`
-}
-
-sayHello = name => `Hello ${name}`
-
-//String
-
+// String manipulation including accessing characters, using the forEach method on arrays, and string replacement.
 let college_name = "Seneca College"
-
-//Only array
 a.forEach(element => {
-    console.log(element)
+    console.log(element) // Logs each element of array 'a'.
 });
 
-for(let c in college_name){
-    console.log(c)
-}
-console.log(college_name[0])
-console.log(college_name[2])
-console.log(college_name[14])
-//String are immutable / you can't change like array
-//college_name[0] = 's'
-console.log(college_name)
-console.log(college_name.charAt(0))
-
-college_name.replace("e", "3")
-console.log(college_name)
-
-//These will work
-college_name = college_name.replace("e", "3")
-console.log(college_name)
-
-//MORE on string
-let core = "\u{48}"
-console.log(core)
-
-let heart = "\u{2665}"
-console.log(heart)
-
-let copyright = "\u{00A9}"
-console.log(copyright)
+// Unicode characters in strings demonstrated with escape sequences.
+let core = "\u{48}" // Represents the letter 'H'.
+let heart = "\u{2665}" // Represents the heart symbol '♥'.
