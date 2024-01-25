@@ -1,0 +1,13 @@
+{
+  "name": "wek03_lab_examples",
+  "version": "1.0.0",
+  "description": "Week03 Function, class, arrow and promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node object_literal.js"
+  },
+  "keywords": [],
+  "author": "Pritesh Patel",
+  "license": "ISC"
+}
