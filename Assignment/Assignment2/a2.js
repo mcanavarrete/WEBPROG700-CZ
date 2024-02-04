@@ -1,5 +1,16 @@
+/*********************************************************************************
+*  WEB700 – Assignment 2
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: Ma Czarina Alexandria Navarrete Student ID: mcanavarrete/126846237 Date: February 3, 2023
+*
+********************************************************************************/ 
+
+
 // Import the 'collegeData' module, which contains functions to handle college data.
-const collegeData = require('./modules/collegeData');
+const collegeData = require('./modules/collegeData.js');
 
 // Call the 'initialize' function from the 'collegeData' module. This function loads student and course data.
 collegeData.initialize().then(() => {
