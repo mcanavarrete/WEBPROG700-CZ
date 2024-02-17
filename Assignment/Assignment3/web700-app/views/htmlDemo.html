@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>WEB700</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Ma Czarina Alexandria Navarrete</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+					<li class="nav-item active"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+					<li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<main class="col-md-12">
+					<h2>HTML5 Semantic Elements</h2>
+					<table class="table">
+						<caption>Overview of HTML5 Semantic Elements</caption>
+						<thead>
+							<tr>
+								<th scope="col">Element</th>
+								<th scope="col">Description</th>
+								<th scope="col">Example Use</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>&lt;header&gt;</code></td>
+								<td>Defines a header for a document or a section</td>
+								<td>Site logo, navigation links, search form</td>
+							</tr>
+							<tr>
+								<td><code>&lt;nav&gt;</code></td>
+								<td>Defines navigation links</td>
+								<td>Primary site navigation</td>
+							</tr>
+							<tr>
+								<td><code>&lt;section&gt;</code></td>
+								<td>Defines a section in a document</td>
+								<td>Chapters, news items, contact information</td>
+							</tr>
+							<tr>
+								<td><code>&lt;article&gt;</code></td>
+								<td>Defines an independent, self-contained content</td>
+								<td>Forum posts, magazine and newspaper articles</td>
+							</tr>
+							<tr>
+								<td><code>&lt;aside&gt;</code></td>
+								<td>Defines content aside from the content it is placed in</td>
+								<td>Sidebars, call-out boxes</td>
+							</tr>
+							<tr>
+								<td><code>&lt;footer&gt;</code></td>
+								<td>Defines a footer for a document or a section</td>
+								<td>Authorship information, contact information, sitemap</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="2">Total Elements Covered</td>
+								<td>6</td>
+							</tr>
+						</tfoot>
+					</table>
+					<p>This table provides an overview of various HTML5 semantic elements, showcasing their importance in structuring web content semantically. The use of these elements helps in creating more accessible and SEO-friendly web pages.</p>
+					<h2>HTML5 Features</h2>
+					<ol>
+						<li><b>HTML5 Doctype:</b> Simplifies the document type declaration and ensures compatibility across browsers.</li>
+						<li><b>Semantic Elements:</b> Provides meaning to web content with tags like <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;nav&gt;</code>.</li>
+						<li><b>Form Enhancements:</b> Introduces new form controls like <code>&lt;input type="email"&gt;</code> and <code>&lt;input type="date"&gt;</code>.</li>
+						<li><b>Video and Audio:</b> Enables multimedia integration without third-party plugins using <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> elements.</li>
+						<li><b>Graphics and 3D Effects:</b>
+							<ul>
+								<li><code>&lt;canvas&gt;</code>: Allows dynamic rendering of 2D shapes and bitmap images.</li>
+								<li><code>&lt;svg&gt;</code>: Supports inline SVG for scalable vector graphics.</li>
+								<li><b>WebGL:</b> Facilitates rendering interactive 3D graphics within any compatible web browser.</li>
+							</ul>
+						</li>
+						<li><b>Geolocation API:</b> Enables users to share their location with trusted web applications.</li>
+					</ol>
+					<p>This section outlines some of the key features and capabilities introduced with HTML5, from structural semantic elements that help define the parts of a web page to advanced form inputs for improved user interactions. It also highlights multimedia support directly within the browser and new APIs for creating richer, more interactive web experiences.</p>					
+
+					<h2>Random Images</h2>
+					<div>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Snowboarder performing a trick in a halfpipe" style="width:100%;max-width:300px;">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/June_odd-eyed-cat.jpg" alt="An odd-eyed cat with one blue eye and one green eye" style="width:100%;max-width:300px;">
+						<img src="dogs.jpg" alt="Picture of my dogs" style="width:100%;max-width:300px;">
+					</div>
+					<p>This section displays a collection of images showcasing diverse subjects: an action-packed moment of a snowboarder, the unique beauty of an odd-eyed cat, and a serene landscape. Each image is chosen to demonstrate the variety of content that can be enhanced through visual storytelling. The inclusion of alt text with each image ensures that the content is accessible, providing a descriptive narrative that complements the visual experience.</p>
+					
+					
+					<h2>Audio</h2>
+					<audio controls>
+						<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.mp3" type="audio/mpeg">
+						<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.ogg" type="audio/ogg">
+						Your browser does not support the audio element.
+					</audio>
+					<p>This section includes an HTML5 audio player that can play different audio formats. It demonstrates the use of the audio element with multiple source elements for compatibility.</p>
+					
+					<h2>Video</h2>
+					<video width="400" height="400" controls>
+						<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.mp4" type="video/mp4">
+						<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.ogg" type="video/ogg">
+						<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.webm" type="video/webm">
+						<p>Sorry, your browser doesn't support HTML5 video</p>
+					</video>
+					<p>This section includes an HTML5 video player showcasing video playback capabilities with support for multiple video formats for broad compatibility.</p>
+					
+				</main>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
