@@ -8,7 +8,6 @@
 *
 ********************************************************************************/ 
 
-
 var HTTP_PORT = process.env.PORT || 8080;
 var express = require("express");
 var app = express();
@@ -17,13 +16,15 @@ var collegeData = require("./modules/collegeData");
 
 app.use(express.static('views'));
 app.use(express.static('images'));
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true })); 
 
 // Initialize collegeData before starting the server
 collegeData.initialize().then(() => {
     // setup http server to listen on HTTP_PORT
     app.listen(HTTP_PORT, () => { 
-    console.log(`Server listening on: ${HTTP_PORT}` )
-});
+        console.log(`Server listening on: ${HTTP_PORT}`);
+    });
 }).catch(err => {
     console.log(err);
 });
@@ -41,6 +42,23 @@ app.get("/about", (req, res) => {
 // GET /htmlDemo
 app.get("/htmlDemo", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/htmlDemo.html"));
+});
+
+// GET /students/add
+app.get('/students/add', (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/addStudent.html"));
+});
+
+// POST /students/add
+app.post('/students/add', (req, res) => {
+    // Convert checkbox value to boolean
+    req.body.ta = req.body.ta ? true : false;
+    collegeData.addStudent(req.body).then(() => {
+        res.redirect("/students");
+    }).catch(err => {
+        console.log(err);
+        res.status(500).send("Failed to add student");
+    });
 });
 
 // GET /students
