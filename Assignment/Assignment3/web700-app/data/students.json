@@ -3143,5 +3143,18 @@
         "ta": false,
         "TA": false,
         "studentNum": 262
+    },
+    {
+        "firstName": "TESTING Ma Czarina Alexandria",
+        "lastName": "Navarrete",
+        "email": "TESTINGmcanavarrete@myseneca.ca",
+        "addressStreet": "1009-55 Lindcrest Manor",
+        "addressCity": "TESTING ",
+        "addressProvince": "TESTING ",
+        "ta": true,
+        "enrollmentStatus": "Part Time",
+        "course": "9",
+        "TA": false,
+        "studentNum": 263
     }
 ]
