@@ -1,0 +1,33 @@
+<h3>Employee List</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee City</th>
+            <th>Employee Designation</th>
+            <th>Employee Company</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each employees}}
+            <tr>
+                <td>{{@index}}</td>
+                <td>{{name}}</td>
+                <td>{{this.city}}</td>
+                <td>{{this.designation}}</td>
+                <td>{{this.company}}</td>
+                {{#if this.fulltime}}
+                    <td style="color: green;">Full Time</td>
+                {{else}}
+                    <td>Contract</td>
+                {{/if}}
+            </tr>
+        {{else}}
+            <tr style="background-color: red;">
+                <td colspan="6">No Data Available</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
