@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+<body>
+    {{> header}}
+
+    {{#toUpperCase data.name}}{{/toUpperCase}}
+    {{!-- {{#toLowerCase data.name}}{{/toLowerCase}} --}}
+    {{#strong}}{{data.name}}{{/strong}}
+    {{#strong}}Student FROM Helper}{{/strong}}
+    
+}
+    <h1>Student Info</h1>
+     <table border='1'>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Company</th>
+            </tr>
+            <tr>
+                <td>{{#toLowerCase data.name}}{{/toLowerCase}}</td>
+                <td>{{data.age}}</td>
+                <td>{{data.occupation}}</td>
+                <td>{{data.company}}</td>
+            </tr>
+        </table>
+
+<h1>Table Row with Helper</h1>
+        <table border='1'>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Company</th>
+            </tr>
+           {{#getStudentRow data}}{{/getStudentRow}}
+        </table>
+    {{> footer data}}
+</body>
+</html>
