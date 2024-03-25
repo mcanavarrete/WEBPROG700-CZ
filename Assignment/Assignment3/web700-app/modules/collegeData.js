@@ -60,6 +60,18 @@ module.exports.getCourses = function () {
     });
 };
 
+module.exports.getCourseById = function(id) {
+    return new Promise((resolve, reject) => {
+        let foundCourse = dataCollection.courses.find(courses => courses.courseId == id);
+        if (foundCourse) {
+            resolve(foundCourse);
+        } else {
+            reject("Query returned 0 results");
+        }
+    });
+};
+
+
 module.exports.getStudentByNum = function (num) {
     return new Promise(function (resolve, reject) {
         let foundStudent = dataCollection.students.find(student => student.studentNum == num);
@@ -71,6 +83,29 @@ module.exports.getStudentByNum = function (num) {
         resolve(foundStudent);
     });
 };
+
+module.exports.updateStudent = function(studentData) {
+    return new Promise((resolve, reject) => {
+        let index = dataCollection.students.findIndex(student => student.studentNum == studentData.studentNum);
+        if (index !== -1) {
+            // Merge existing student data with new data
+            dataCollection.students[index] = {...dataCollection.students[index], ...studentData};
+
+            // Add code to write the updated students array back to your JSON file
+            fs.writeFile('./data/students.json', JSON.stringify(dataCollection.students, null, 4), 'utf8', (err) => {
+                if (err) {
+                    reject("Unable to save updated student data");
+                } else {
+                    resolve();
+                }
+            });
+
+        } else {
+            reject("Student Not Found");
+        }
+    });
+};
+
 
 module.exports.getStudentsByCourse = function (course) {
     return new Promise(function (resolve, reject) {
@@ -84,25 +119,34 @@ module.exports.getStudentsByCourse = function (course) {
     });
 };
 
-// AddStudent function
 module.exports.addStudent = function (studentData) {
     return new Promise((resolve, reject) => {
-        // Adjust for checkbox 'TA' being undefined if not checked
+        // Assuming studentData.enrollmentStatus has the correct 'Full Time' or 'Part Time' value
+        // Map enrollmentStatus to status
+        studentData.status = studentData.enrollmentStatus;
+
+        // Convert TA checkbox value to boolean
         studentData.TA = studentData.TA === "true";
 
-        // Assign a new studentNum
-        studentData.studentNum = dataCollection.students.length + 1;
+        // Parse course as an integer if necessary
+        studentData.course = parseInt(studentData.course);
 
-        // Add the student to the collection
+        // Assign a new unique studentNum
+        // Assuming studentNum is a number and not an auto-incrementing ID in a database
+        let maxNum = dataCollection.students.reduce((max, student) => Math.max(max, student.studentNum), 0);
+        studentData.studentNum = maxNum + 1;
+
+        // Add the new student to the collection
         dataCollection.students.push(studentData);
 
-        // Optionally, update the students.json file to reflect the new addition
+        // Write the updated students array back to the students.json file
         fs.writeFile('./data/students.json', JSON.stringify(dataCollection.students, null, 4), 'utf8', (err) => {
             if (err) {
-                reject("Unable to save new student"); return;
+                reject("Unable to save new student");
+            } else {
+                resolve();
             }
-
-            resolve();
         });
     });
 };
+
