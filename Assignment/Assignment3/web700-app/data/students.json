@@ -9,7 +9,9 @@
         "addressProvince": "ON",
         "TA": true,
         "status": "Full Time",
-        "course": 2
+        "course": 2,
+        "isFullTime": true,
+        "isPartTime": false
     },
     {
         "studentNum": 2,
@@ -21,7 +23,9 @@
         "addressProvince": "ON",
         "TA": true,
         "status": "Full Time",
-        "course": 2
+        "course": 2,
+        "isFullTime": true,
+        "isPartTime": false
     },
     {
         "studentNum": 3,
@@ -3118,43 +3122,5 @@
         "TA": false,
         "status": "Part Time",
         "course": 5
-    },
-    {
-        "firstName": "TEST",
-        "lastName": "Navarrete",
-        "email": "testmcanavarrete@myseneca.ca",
-        "addressStreet": "1009-55 Lindcrest Manor",
-        "addressCity": "test",
-        "addressProvince": "test",
-        "ta": true,
-        "enrollmentStatus": "Part Time",
-        "course": "3",
-        "TA": false,
-        "studentNum": 261
-    },
-    {
-        "firstName": "",
-        "lastName": "",
-        "email": "",
-        "addressStreet": "",
-        "addressCity": "",
-        "addressProvince": "",
-        "course": "1",
-        "ta": false,
-        "TA": false,
-        "studentNum": 262
-    },
-    {
-        "firstName": "TESTING Ma Czarina Alexandria",
-        "lastName": "Navarrete",
-        "email": "TESTINGmcanavarrete@myseneca.ca",
-        "addressStreet": "1009-55 Lindcrest Manor",
-        "addressCity": "TESTING ",
-        "addressProvince": "TESTING ",
-        "ta": true,
-        "enrollmentStatus": "Part Time",
-        "course": "9",
-        "TA": false,
-        "studentNum": 263
     }
 ]

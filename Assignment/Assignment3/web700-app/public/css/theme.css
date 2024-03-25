@@ -38,6 +38,10 @@ body, html {
   color: #ffffff;
 }
 
+select, option {
+  color: black; /* Change font color to black for dropdown */
+}
+
 h1{
     color: red;
     font-size: 20px;
