@@ -244,16 +244,18 @@
         "course": 1
     },
     {
-        "studentNum": 21,
-        "firstName": "Rozalie",
-        "lastName": "Dron",
-        "email": "rdronk@mySeneca.ca",
-        "addressStreet": "29843 Luster Terrace",
-        "addressCity": "Toronto",
-        "addressProvince": "ON",
-        "TA": true,
-        "status": "Full Time",
-        "course": 6
+        "studentNum": "21",
+        "firstName": "RozalieUPDATE2",
+        "lastName": "DronUPDATE2",
+        "email": "rdronk@mySeneca.caUPDATE2",
+        "addressStreet": "29843 Luster TerraceUPDATE",
+        "addressCity": "TorontoUPDATE",
+        "addressProvince": "ONUPDATE",
+        "TA": "on",
+        "status": "Part Time",
+        "course": "5",
+        "isFullTime": false,
+        "isPartTime": true
     },
     {
         "studentNum": 22,
@@ -3122,5 +3124,19 @@
         "TA": false,
         "status": "Part Time",
         "course": 5
+    },
+    {
+        "firstName": "New Student",
+        "lastName": "Student",
+        "email": "newstudent@myseneca.ca",
+        "addressStreet": "1009-55 Lindcrest Manor",
+        "addressCity": "Markham",
+        "addressProvince": "ON",
+        "enrollmentStatus": "Full Time",
+        "course": 8,
+        "ta": false,
+        "status": "Full Time",
+        "TA": false,
+        "studentNum": 261
     }
 ]
